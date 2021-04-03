@@ -38,49 +38,49 @@ namespace Deadlock
         #region Deadlock Code
 
 
-        public void transferFromAToB(int amount)
-        {
-            lock (aLock)
-            {
-                //Simulate computing time to get the value;
-                Thread.Sleep(100);
-                a = a - amount;
+        //public void transferFromAToB(int amount)
+        //{
+        //    lock (aLock)
+        //    {
+        //        //Simulate computing time to get the value;
+        //        Thread.Sleep(100);
+        //        a = a - amount;
 
-                lock (bLock)
-                {
-                    //Simulate computing time to get the value;
-                    Thread.Sleep(100);
-                    b = b + amount;
-                }
-            }
+        //        lock (bLock)
+        //        {
+        //            //Simulate computing time to get the value;
+        //            Thread.Sleep(100);
+        //            b = b + amount;
+        //        }
+        //    }
 
-            Console.WriteLine(amount + " was transfered from A to B.");
-        }
+        //    Console.WriteLine(amount + " was transfered from A to B.");
+        //}
 
-        public void transferFromBToA(int amount)
-        {
-            lock (bLock)
-            {
-                //Simulate computing time to get the value;
-                Thread.Sleep(100);
-                b = b - amount;
+        //public void transferFromBToA(int amount)
+        //{
+        //    lock (bLock)
+        //    {
+        //        //Simulate computing time to get the value;
+        //        Thread.Sleep(100);
+        //        b = b - amount;
 
-                lock (aLock)
-                {
-                    //Simulate computing time to get the value;
-                    Thread.Sleep(100);
-                    a = a + amount;
-                }
-            }
+        //        lock (aLock)
+        //        {
+        //            //Simulate computing time to get the value;
+        //            Thread.Sleep(100);
+        //            a = a + amount;
+        //        }
+        //    }
 
-            Console.WriteLine(amount + " was transfered from B to A.");
-        }
+        //    Console.WriteLine(amount + " was transfered from B to A.");
+        //}
 
 
         #endregion
 
         #region Resolved deadlock Code
-        /*
+
         public void transferFromAToB(int amount)
         {
             lock (aLock)
@@ -88,7 +88,7 @@ namespace Deadlock
                 //Simulate computing time to get the value;
                 Thread.Sleep(100);
                 a = a - amount;
-              
+
                 lock (bLock)
                 {
                     //Simulate computing time to get the value;
@@ -104,7 +104,7 @@ namespace Deadlock
             {
                 //Simulate computing time to get the value;
                 Thread.Sleep(100);
-                a = a + amount;          
+                a = a + amount;
                 lock (bLock)
                 {
                     //Simulate computing time to get the value;
@@ -114,7 +114,7 @@ namespace Deadlock
             }
             Console.WriteLine(amount + " was transfered from B to A.");
         }
-        */
+
         #endregion
     }
 }
